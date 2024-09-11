@@ -1,0 +1,27 @@
+@import '../../styles/styles.scss';
+
+//mobile
+.container {
+  background: $pageBackground;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.formContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.createButton{
+  padding: $spacing-s $spacing-xxl;
+  font-size: $content-size-l;
+  border-radius: 0.8rem;
+  margin: 0 $spacing-l;
+  font-weight: 500;
+  font-size: $content-size-l;
+}
