@@ -1,0 +1,62 @@
+@import '../../styles/base/_settings.scss';
+
+.container {
+  height: 100%;
+  margin: $spacing-m $spacing-m;
+  margin: $spacing-m $spacing-m;
+  position: relative;
+  overflow: scroll;
+  background-color: blue;
+  border-radius: 10px;
+}
+
+.tabsContainer {
+  position: absolute;
+  right: $spacing-m;
+  left: $spacing-m;
+  height: 9.2rem;
+  background-color: $primaryBackground;
+  border-top: 0.1rem solid $primaryBorder;
+  border-left: 0.1rem solid $primaryBorder;
+  border-right: 0.1rem solid $primaryBorder;
+  border-top-left-radius: 0.8rem;
+  border-top-right-radius: 0.8rem;
+}
+
+.divider {
+  border: 0.05rem solid $primaryBorder;
+  margin: 0rem $spacing-m;
+}
+
+.custom_dropdown_control {
+  background-color: $primaryBackground;
+  border: 0.2rem solid $primaryBorder;
+  border-radius: 0.8rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: 1.55rem;
+  font-style: bold;
+}
+.custom_dropdown_menu {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border: 0.2rem solid $primaryBorder;
+  border-radius: 0.8rem;
+  font-size: 1.55rem;
+  font-style: bold;
+  
+}
+.custom_dropdown_menu :hover{
+  background-color: $filteredTagColor;
+  color: #ffffff;
+}
+
+.createButton {
+  padding: $spacing-s $spacing-xxl;
+  font-size: $content-size-l;
+  color: $primaryBackground;
+  border-radius: 0.8rem;
+  margin: 0 $spacing-l;
+  font-weight: 500;
+  font-size: $content-size-l;
+}

@@ -1,0 +1,21 @@
+@import '../../styles/base/_settings.scss';
+
+.componentContainer {
+  height: 90%;
+  background-color: #f7f8fc;
+}
+
+.componentContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.noAccessContainer{
+  height: 250px;
+  width: 500px;
+  padding: $spacing-s $spacing-m;
+  margin: $spacing-l;
+  background-color: $primaryBackground;
+  border: 0.1rem solid $primaryBorder;
+  border-radius: 1.5rem;
+  font-size: $title-size-xl;
+}

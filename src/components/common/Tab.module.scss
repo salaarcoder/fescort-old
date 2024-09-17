@@ -1,0 +1,21 @@
+@use '../../styles/base/_settings.scss' as *;
+
+.tabHeader {
+  cursor: pointer;
+  padding: $spacing-m $spacing-m;
+  font-size: $title-size-s;
+  color: $inactiveTabTextColor;
+  font-weight: 750;
+  font-size: 1.28rem;
+  border-radius: 0.4rem;
+}
+
+.selectedTabHeader {
+  color: $activeTabTextColor;
+  border-bottom: 0.4rem solid $primaryHighlightColor;
+}
+
+.selectedSubTabHeader {
+  color: $activeTabTextColor;
+  border-bottom: 0.4rem solid $activeTabTextColor;
+}

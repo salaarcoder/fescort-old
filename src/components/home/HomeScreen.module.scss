@@ -1,0 +1,12 @@
+@import '../../styles/base/_settings.scss';
+
+.container {
+  height: 100%;
+  margin: $spacing-m $spacing-m;
+  margin: $spacing-m $spacing-m;
+  position: relative;
+  overflow: scroll;
+  background-color: blue;
+  border-radius: 10px;
+}
+

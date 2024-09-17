@@ -7,10 +7,17 @@ import PageNotFound from './components/notFound/NotFound';
 import HomeScreen from './components/home/HomeScreen';
 import LoginScreen from './components/auth/LoginScreen';
 import { CustomPage } from './components/common';
+import CreateScreen from './components/create/CreateScreen';
+import MoviesScreen from './components/movies/MoviesScreen';
+import { useSelector } from 'react-redux';
+import { RootState } from './store';
+
+// const activeVideoData = useSelector((state: RootState) => state.movie.activeData);
 
 const AppRoutes: React.FC = () => (
   <Router>
     <Routes>
+      {/* Home */}
       <Route
         path="/"
         element={
@@ -19,7 +26,34 @@ const AppRoutes: React.FC = () => (
           </CustomPage>
         }
       />
-      {/* <Route path="/about" element={<About />} /> */}
+      {/*Movies */}
+      <Route
+        path="/movies"
+        element={
+          <CustomPage>
+            <MoviesScreen />
+          </CustomPage>
+        }
+      />
+      {/* Create */}
+      <Route
+        path="/create"
+        element={
+          <CustomPage>
+            <CreateScreen isEditScreen={false} />
+          </CustomPage>
+        }
+      />
+      {/* Update */}
+      <Route
+        path="/update"
+        element={
+          <CustomPage>
+            <CreateScreen isEditScreen={true} />
+          </CustomPage>
+        }
+      />
+      {/* Login */}
       <Route
         path="/login"
         element={
@@ -29,6 +63,7 @@ const AppRoutes: React.FC = () => (
         }
       />
       {/* <Route path="/contact" element={<Contact />} /> */}
+      {/* Not Found */}
       <Route
         path="*"
         element={

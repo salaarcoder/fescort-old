@@ -1,0 +1,35 @@
+@import '../../styles/base/_settings.scss';
+
+.searchContainer {
+  display: flex;
+  flex-direction:row;
+  gap: 1rem;
+  margin: 0rem $spacing-m;
+  margin-right: $spacing-l;
+  background-color: $primaryBackground;
+  height: 3.2rem;
+  width: 100%;
+}
+
+.searchInput {
+  width: 90%;
+  padding: 0rem $spacing-m;
+  font-weight: 500;
+  font-size: 1.4rem;
+  color: $textInputText;
+  border: 0.1rem solid $primaryBorder;
+  border-radius: 0.6rem;
+}
+
+.searchBtn {
+  width: 10%;
+  background-color: $primaryHighlightColor;
+  border: 0.1rem solid $primaryBorder;
+  border-radius: 0.6rem;
+}
+
+.searchIcon {
+  height: $icon-l;
+  width: $icon-l;
+  margin: auto;
+}

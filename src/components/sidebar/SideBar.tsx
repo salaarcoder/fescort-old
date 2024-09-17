@@ -1,12 +1,14 @@
 import { signOut } from 'firebase/auth';
 import React from 'react';
-import { auth } from '../../services/firebase';
+import { FB_AUTH } from '../../services/firebase';
 import toast from 'react-hot-toast';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../../store';
 import { logOut } from '../../store/authSlice';
+import { useNavigate } from 'react-router-dom';
 
 const SideBar: React.FC = () => {
+  const navigate = useNavigate();
   const dispatch: AppDispatch = useDispatch();
   const isLoggedIn = useSelector((state: RootState) => state.auth.isLoggedIn);
   //
@@ -14,7 +16,7 @@ const SideBar: React.FC = () => {
     toast.loading('Please wait....');
     try {
       if (!isLoggedIn) return;
-      await signOut(auth);
+      await signOut(FB_AUTH);
       dispatch(logOut());
       toast.dismiss();
       toast.success('successfully logged out');
@@ -24,11 +26,17 @@ const SideBar: React.FC = () => {
       console.log('handleLogout Error:: ' + e);
     }
   };
-  //admin@salaarcoder.com
+  //
   return (
     <>
-      <div>SideBar</div>
-      <button onClick={handleLogout}>Logout</button>
+      <div className="flex flex-col justify-start items-center space-x-8">
+        <div>SideBar</div>
+        <button onClick={() => navigate('/')}>Home</button>
+        <button onClick={() => navigate('/movies')}>Movies</button>
+        <button onClick={() => navigate('/create')}>Create</button>
+        <button onClick={() => navigate('/favorites')}>Favorites</button>
+        <button onClick={handleLogout}>Logout</button>
+      </div>
     </>
   );
 };

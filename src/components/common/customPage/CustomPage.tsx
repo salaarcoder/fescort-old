@@ -6,18 +6,18 @@ import SideBar from '../../sidebar/SideBar';
 import LoginScreen from '../../auth/LoginScreen';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../../store';
-import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import { onAuthStateChanged } from 'firebase/auth';
 import { login, logOut } from '../../../store/authSlice';
+import { FB_AUTH } from '../../../services/firebase';
 
 export default function CustomPage({ children }: { children: React.ReactNode }) {
   const isLoggedIn = useSelector((state: RootState) => state.auth.isLoggedIn);
   //
   const dispatch = useDispatch();
-  const auth = getAuth();
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      console.log({ u: auth.currentUser });
+    const unsubscribe = onAuthStateChanged(FB_AUTH, (user) => {
+      console.log({ u: FB_AUTH.currentUser });
       if (user) {
         // User is signed in, dispatch to store
         dispatch(login({ userId: user.uid, userName: user.displayName || '', userEmail: user.email || '' }));
@@ -29,7 +29,7 @@ export default function CustomPage({ children }: { children: React.ReactNode }) 
 
     // Cleanup subscription on unmount
     return () => unsubscribe();
-  }, [auth, dispatch]);
+  }, [FB_AUTH, dispatch]);
 
   return (
     <div className={`${styles.container}`}>

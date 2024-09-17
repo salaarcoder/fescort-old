@@ -1,10 +1,9 @@
 import React from 'react';
-import { CustomPage } from '../common';
 
 const HomeScreen: React.FC = () => {
   return (
     <>
-      <div>HomeScreen</div>
+      <div className="h-[100%]">Home</div>
     </>
   );
 };

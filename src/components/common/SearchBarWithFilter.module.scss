@@ -1,0 +1,68 @@
+@import '../../styles/base/_settings.scss';
+
+.filterAndSearchContainer {
+  padding: 0rem $spacing-m;
+  background-color: $primaryBackground;
+}
+
+.filterContainer {
+  // width: 10%;
+  border: 0.1rem solid $primaryBorder;
+  padding: $spacing-s $spacing-m;
+  background-color: $textInputBg;
+  border-radius: 0.6rem;
+  margin-left: $spacing-s;
+}
+
+.searchFull {
+  width: 100%;
+}
+
+.searchWithFilter {
+  width: 88%;
+}
+
+.searchBar {
+  background: $textInputBg;
+  border: 0.1rem solid $primaryBorder;
+  border-radius: 0.6rem;
+  padding: $spacing-s $spacing-m;
+  margin-right: $spacing-s;
+}
+
+.searchIcon {
+  height: $icon-m;
+  width: $icon-m;
+  margin-right: $spacing-m;
+}
+
+.filterIcon {
+  height: $icon-m;
+  width: $icon-m;
+  margin-right: $spacing-m;
+}
+
+.dropDownIcon {
+  height: 0.6rem;
+  width: 1.1rem;
+  margin-left: $spacing-m;
+}
+
+.filterDropdownIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 0.6rem;
+  width: 1.1rem;
+  margin-left: $spacing-m;
+}
+
+.filterIconText {
+  color: $primaryScreenButtonText;
+}
+
+.searchInput {
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: $textInputText;
+}

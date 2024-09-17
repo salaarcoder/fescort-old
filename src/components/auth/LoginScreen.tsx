@@ -1,18 +1,16 @@
 import { useEffect, useState } from 'react';
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import { auth } from '../../services/firebase';
 import styles from './LoginScreen.module.scss';
 import toast from 'react-hot-toast';
-import { AppDispatch, RootState } from '../../store';
-import { useDispatch, useSelector } from 'react-redux';
-import { login } from '../../store/authSlice';
+import { RootState } from '../../store';
+import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { FB_AUTH } from '../../services/firebase';
 
 const LoginScreen: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isBtnDisabled, setIsBtnDisabled] = useState<boolean>(true);
-  const dispatch: AppDispatch = useDispatch();
   const isLoggedIn = useSelector((state: RootState) => state.auth.isLoggedIn);
   const navigate = useNavigate();
 
@@ -24,8 +22,7 @@ const LoginScreen: React.FC = () => {
         toast.error('please enter valid input');
         return;
       }
-      await signInWithEmailAndPassword(auth, email, password);
-      // dispatch(login({ userId: 'userId', userName: 'userName' }));
+      await signInWithEmailAndPassword(FB_AUTH, email, password);
       toast.dismiss();
       toast.success('successfully logged in');
     } catch (error: any) {
